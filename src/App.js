@@ -1,26 +1,64 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import './App.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component {
+  state = {
+    userName: " ",
+    passowrd: ""
+  };
+
+  onUserSubmit = event => {
+    event.preventDefault();
+    this.setState({ userName: event.target.value });
+    this.setState({ passowrd: event.target.value });
+    console.log(this.state.userName);
+    console.log(this.state.passowrd);
+  };
+  render() {
+    return (
+      <div className="App">
+        <div className="loginbox">
+          <img
+            className="avatar"
+            alt="profile"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS3Nw8Rc-b0VL9GkaoIuIYMKNI6b6qBQ-PwTHn2gZN2lld822Gp"
+          />
+          <h1>Login Here </h1>
+          <form>
+            <lable>Username</lable>
+            <input
+              type="email"
+              requird="true"
+              name=""
+              placeholder="Enter username"
+              value={this.state.userName}
+              onChange={e => {
+                this.setState({ userName: e.target.value });
+              }}
+            />
+            <label for="psw">Password</label>
+            <input
+              type="password"
+              requird="true"
+              placeholder="Enter passowrd"
+              id="psw"
+              name="psw"
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+              title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+              value={this.state.passowrd}
+              onChange={event => {
+                this.setState({ passowrd: event.target.value });
+              }}
+            />
+            <input type="submit" onClick={this.onUserSubmit} />
+            <a href="#">Lost your Password ? </a> <br />
+            <a href="#">Don't have an account?</a>
+          </form>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
