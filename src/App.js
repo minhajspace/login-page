@@ -10,11 +10,13 @@ class App extends React.Component {
 
   onUserSubmit = event => {
     event.preventDefault();
-    this.setState({ userName: event.target.value });
-    this.setState({ passowrd: event.target.value });
-    console.log(this.state.userName);
-    console.log(this.state.passowrd);
+
+    const { userName, passowrd } = this.state
+    console.log(userName, passowrd);
+
   };
+
+
   render() {
     return (
       <div className="App">
@@ -29,7 +31,7 @@ class App extends React.Component {
             <lable>Username</lable>
             <input
               type="email"
-              requird="true"
+              required={true}
               name=""
               placeholder="Enter username"
               value={this.state.userName}
@@ -40,7 +42,7 @@ class App extends React.Component {
             <label for="psw">Password</label>
             <input
               type="password"
-              requird="true"
+              required="true"
               placeholder="Enter passowrd"
               id="psw"
               name="psw"
