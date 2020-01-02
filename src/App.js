@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useRef, createRef } from "react";
+import { connect } from 'react-redux'
+import { change_userName, change_passWord } from './Actions/types'
+
 import './App.css'
 
 
@@ -59,4 +62,10 @@ class App extends React.Component {
   }
 }
 
-export default App;
+
+
+export default connect(
+  mapStateToProps, {
+  change_passWord, change_userName
+}
+)(App)
