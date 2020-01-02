@@ -35,7 +35,7 @@ class App extends React.Component {
               placeholder="Enter username"
               value={userName}
               onChange={e => {
-                this.setState({ userName: e.target.value });
+                this.setState({ changeUsername: e.target.value });
               }}
             />
             <label for="psw">Password</label>
@@ -49,7 +49,7 @@ class App extends React.Component {
               title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
               value={password}
               onChange={event => {
-                this.setState({ passowrd: event.target.value });
+                this.setState({ changePassword: event.target.value });
               }}
             />
             <input type="submit" onClick={this.onUserSubmit} />
