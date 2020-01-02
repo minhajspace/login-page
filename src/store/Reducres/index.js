@@ -1,18 +1,20 @@
-import { CHANGE_USERNAME, CHANGE_PASSWORD } from './Actions/types'
-import { bindActionCreators } from 'redux'
+import { CHANGE_USERNAME, CHANGE_PASSWORD } from '../Actions/types';
+
 
 const INITIAL_STATE = {
 
     userName: " ",
     passowrd: ""
 }
+export default (state = INITIAL_STATE, action) => {
 
-switch (Actions.type) {
-    case CHANGE_USERNAME:
-        return { ...state, userName: Actions.payload };
-    case CHANGE_PASSWORD:
-        return { ...state, passowrd: Actions.passowrd };
-    default:
-        return state;
+    switch (action.type) {
+        case CHANGE_USERNAME:
+            return { ...state, userName: action.payload };
+        case CHANGE_PASSWORD:
+            return { ...state, passowrd: action.passowrd };
+        default:
+            return state;
 
+    }
 }

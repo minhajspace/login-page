@@ -63,9 +63,14 @@ class App extends React.Component {
 }
 
 
+const mapStateToProps = state => {
+  return {
+    userName: state.userName,
+    password: state.password
+  };
+};
 
 export default connect(
-  mapStateToProps, {
-  change_passWord, change_userName
-}
-)(App)
+  mapStateToProps,
+  { change_userName, change_passWord }
+)(App);
