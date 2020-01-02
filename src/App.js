@@ -16,6 +16,7 @@ class App extends React.Component {
 
 
   render() {
+    const { userName, password, changeUsername, changePassword } = this.props;
     return (
       <div className="App">
         <div className="loginbox">
@@ -34,7 +35,7 @@ class App extends React.Component {
               placeholder="Enter username"
               value={userName}
               onChange={e => {
-                this.setState({ change_userName: e.target.value });
+                this.setState({ userName: e.target.value });
               }}
             />
             <label for="psw">Password</label>
@@ -46,9 +47,9 @@ class App extends React.Component {
               name="psw"
               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
               title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
-              value={passowrd}
+              value={password}
               onChange={event => {
-                this.setState({ change_passowrd: event.target.value });
+                this.setState({ passowrd: event.target.value });
               }}
             />
             <input type="submit" onClick={this.onUserSubmit} />
