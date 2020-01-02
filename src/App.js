@@ -9,9 +9,8 @@ class App extends React.Component {
 
   onUserSubmit = event => {
     event.preventDefault();
-
-    const { userName, passowrd } = this.state
-    console.log(userName, passowrd);
+    const { userName, password } = this.props;
+    console.log(userName, password);
 
   };
 
@@ -33,9 +32,9 @@ class App extends React.Component {
               required={true}
               name=""
               placeholder="Enter username"
-              value={this.state.userName}
+              value={userName}
               onChange={e => {
-                this.setState({ userName: e.target.value });
+                this.setState({ change_userName: e.target.value });
               }}
             />
             <label for="psw">Password</label>
@@ -47,9 +46,9 @@ class App extends React.Component {
               name="psw"
               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
               title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
-              value={this.state.passowrd}
+              value={passowrd}
               onChange={event => {
-                this.setState({ passowrd: event.target.value });
+                this.setState({ change_passowrd: event.target.value });
               }}
             />
             <input type="submit" onClick={this.onUserSubmit} />
