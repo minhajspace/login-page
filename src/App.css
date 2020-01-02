@@ -12,7 +12,7 @@
 .loginbox {
   width: 320px;
   height: 420px;
-  background: black;
+  background: #f7d569;
   color: #fff;
   top: 50%;
   left: 50%;
@@ -58,7 +58,7 @@ input[type="password"] {
   border: none;
   outline: none;
   height: 40px;
-  background: #fb2525;
+  background: #140202;
   color: #fff;
   font-size: 18px;
   border-radius: 28px;
