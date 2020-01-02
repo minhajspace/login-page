@@ -1,12 +1,16 @@
-import { INCREMENT, DECREMENT } from "../types";
-export const increment = () => {
-    return {
-        type: INCREMENT
+import { CHANGE_USERNAME, CHANGE_PASSWORD } from './types';
 
-    }
-}
-export const decrement = () => {
+export const changeUser = () => {
     return {
-        type: DECREMENT
-    }
-}
+        type: CHANGE_USERNAME,
+        payload: data
+    };
+
+};
+
+export const changePassword = () => {
+    return {
+        type: CHANGE_PASSWORD,
+        payload: text
+    };
+};

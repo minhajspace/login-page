@@ -3,10 +3,6 @@ import './App.css'
 
 
 class App extends React.Component {
-  state = {
-    userName: " ",
-    passowrd: ""
-  };
 
   onUserSubmit = event => {
     event.preventDefault();
